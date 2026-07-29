@@ -3,15 +3,9 @@ Parent: http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-encounter-commu
 Id: leumit-encounter-community-hmo-ambulatory
 Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 
-* meta 1..1
-* meta.profile 2..*
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "$this"
-* meta.profile ^slicing.rules = #open
-* meta.profile contains
-   leumit-encounter-community-hmo-ambulatory 1..1
-* meta.profile[leumit-encounter-community-hmo-ambulatory] 1..1
-* meta.profile[leumit-encounter-community-hmo-ambulatory] = "http://fhir.leumit.co.il/StructureDefinition/leumit-encounter-community-hmo-ambulatory" (exactly)
+* meta 1..1 // HDP parent profile will be changed to 1..1, keeping this until then
+* meta.profile 1..1
+* meta.profile = "http://fhir.leumit.co.il/StructureDefinition/leumit-encounter-community-hmo-ambulatory" (exactly)
 
 * identifier.system 1..1
 * identifier.value 1..1
