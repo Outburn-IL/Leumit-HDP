@@ -60,8 +60,7 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * period.end 1..1
 
 * reasonCode 1..* // Mandatory data item but reasonCode[moh-reason-code] isnt mandatory element so as long as we provide something we are OK
-// * reasonCode[moh-reason-code] ^patternCodeableConcept.coding.system = $patient-visit-reason-moh
-* reasonCode contains leumit-reason-code 1..* // reasonCode is a mandatory data element and should include at minimum a local code
+* reasonCode contains leumit-reason-code 0..* // reasonCode is a mandatory data element but not mandatory in parent profile. There are some scenarios where there is no local code.
 
 * reasonCode[leumit-reason-code].coding 1..*
 * reasonCode[leumit-reason-code].coding.system 1..1
