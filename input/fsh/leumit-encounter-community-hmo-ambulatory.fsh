@@ -21,15 +21,15 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
     or-sys 0..1 and
     suppliers-sys 0..1
 
-* type[tamar-sys].coding ^patternCoding.system = $tamar-visit-types
+* type[tamar-sys] ^patternCodeableConcept.coding.system = $tamar-visit-types
 * type[tamar-sys].coding.system 1..1
 * type[tamar-sys].coding.code 1..1
 
-* type[or-sys].coding ^patternCoding.system = $or-visit-types
+* type[or-sys] ^patternCodeableConcept.coding.system = $or-visit-types
 * type[or-sys].coding.system 1..1
 * type[or-sys].coding.code 1..1
 
-* type[suppliers-sys].coding ^patternCoding.system = $suppliers-visit-types
+* type[suppliers-sys] ^patternCodeableConcept.coding.system = $suppliers-visit-types
 * type[suppliers-sys].coding.system 1..1
 * type[suppliers-sys].coding.code 1..1
 

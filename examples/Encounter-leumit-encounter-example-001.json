@@ -23,13 +23,22 @@
     {
       "coding": [
         {
-          "code": "1",
+          "system": "http://fhir.health.gov.il/cs/il-core-encounter-type",
+          "code": "community-hmo-ambulatory-hdp",
+          "display": "Community/HMO ambulatory encounter (HDP encounter type)"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
           "system": "http://fhir.leumit.co.il/CodeSystem/tamar-visit-types",
+          "code": "1",
           "display": "ביקור רגיל"
         },
         {
-          "code": "390906007",
           "system": "http://snomed.info/sct",
+          "code": "390906007",
           "display": "Follow-up encounter (procedure)"
         }
       ]
