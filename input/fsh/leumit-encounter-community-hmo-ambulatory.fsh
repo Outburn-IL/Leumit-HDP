@@ -3,15 +3,10 @@ Parent: http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-encounter-commu
 Id: leumit-encounter-community-hmo-ambulatory
 Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 
-* meta 1..1
-* meta.profile 2..*
-* meta.profile ^slicing.discriminator.type = #value
-* meta.profile ^slicing.discriminator.path = "$this"
-* meta.profile ^slicing.rules = #open
-* meta.profile contains
-   leumit-encounter-community-hmo-ambulatory 1..1
-* meta.profile[leumit-encounter-community-hmo-ambulatory] 1..1
-* meta.profile[leumit-encounter-community-hmo-ambulatory] = "http://fhir.leumit.co.il/StructureDefinition/leumit-encounter-community-hmo-ambulatory" (exactly)
+* meta 1..1 // HDP parent profile will be changed to 1..1, keeping this until then
+// If more profiles are needed in the future, relax the below constraint
+* meta.profile 1..1
+* meta.profile = "http://fhir.leumit.co.il/StructureDefinition/leumit-encounter-community-hmo-ambulatory" (exactly)
 
 * identifier.system 1..1
 * identifier.value 1..1
@@ -20,35 +15,22 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * class.code 1..1
 * class.display 1..1
 
-// * type.coding 2..2 // up from 0..* 06/07/25
-// * type.coding ^slicing.discriminator.type = #pattern
-// * type.coding ^slicing.discriminator.path = "$this"
-// * type.coding ^slicing.rules = #open
 * type contains
     // snomed 1..1 and // See comment below
     tamar-sys 0..1 and
     or-sys 0..1 and
     suppliers-sys 0..1
 
-// This slice was removed as 1) it overlaps type:face-to-face which is also a snomed code 2) no real way to expand all snomed
-// * type[snomed].coding from $vs-snomed-ct (required)
-// * type[snomed].coding.system 1..1
-// * type[snomed].coding.system = $sct (exactly)
-// * type[snomed].coding.code 1..1
-
 * type[tamar-sys].coding ^patternCoding.system = $tamar-visit-types
 * type[tamar-sys].coding.system 1..1
-* type[tamar-sys].coding.system = $tamar-visit-types (exactly)
 * type[tamar-sys].coding.code 1..1
 
 * type[or-sys].coding ^patternCoding.system = $or-visit-types
 * type[or-sys].coding.system 1..1
-* type[or-sys].coding.system = $or-visit-types (exactly)
 * type[or-sys].coding.code 1..1
 
 * type[suppliers-sys].coding ^patternCoding.system = $suppliers-visit-types
 * type[suppliers-sys].coding.system 1..1
-* type[suppliers-sys].coding.system = $suppliers-visit-types (exactly)
 * type[suppliers-sys].coding.code 1..1
 
 * serviceType.coding 2..*
@@ -78,8 +60,7 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * period.end 1..1
 
 * reasonCode 1..* // Mandatory data item but reasonCode[moh-reason-code] isnt mandatory element so as long as we provide something we are OK
-// * reasonCode[moh-reason-code] ^patternCodeableConcept.coding.system = $patient-visit-reason-moh
-* reasonCode contains leumit-reason-code 1..* // reasonCode is a mandatory data element and should include at minimum a local code
+* reasonCode contains leumit-reason-code 0..* // reasonCode is a mandatory data element but not mandatory in parent profile. There are some scenarios where there is no local code.
 
 * reasonCode[leumit-reason-code].coding 1..*
 * reasonCode[leumit-reason-code].coding.system 1..1
