@@ -6,6 +6,7 @@ Description: "קודי בדיקות לאומית"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitSpecimenGroup
 Id: leumit-specimen-group
@@ -15,6 +16,7 @@ Description: "רשימת קבוצות דיגום"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitContainerType
 Id: leumit-container-type
@@ -24,6 +26,7 @@ Description: "רשימת סוגי מכלים"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitLabTestInstructions
 Id: leumit-lab-test-instructions
@@ -33,6 +36,7 @@ Description: "רשימת הנחיות לביצוע בדיקה"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitConfidentiality
 Id: leumit-confidentiality
@@ -42,6 +46,7 @@ Description: "רשימת חיסיון"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitLabTestReferralStatus
 Id: leumit-lab-test-referral-status
@@ -51,6 +56,7 @@ Description: "רשימת סטטוסים של דרישה"
 * ^status = #draft
 * ^caseSensitive = true
 * ^content = #not-present
+* insert ConformanceMetadata
 
 CodeSystem: LeumitLabTestOrderStatus
 Id: leumit-lab-test-order-status

@@ -7,3 +7,4 @@ Context: MedicationStatement.statusReason
 * url 1..1
 * url = "http://fhir.leumit.co.il/StructureDefinition/ext-med-cancelled-by" (exactly)  
 * value[x] only Reference(LeumitPractitioner)
+* insert ConformanceMetadata
