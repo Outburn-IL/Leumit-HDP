@@ -33,23 +33,23 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * type[suppliers-sys].coding.system 1..1
 * type[suppliers-sys].coding.code 1..1
 
-* serviceType.coding 2..*
-* serviceType.coding ^slicing.discriminator.type = #value
-* serviceType.coding ^slicing.discriminator.path = "system"
-* serviceType.coding ^slicing.rules = #open
-* serviceType.coding contains
-    il-core 1..* and
-    leumit 1..*
+// * serviceType.coding 2..*
+// * serviceType.coding ^slicing.discriminator.type = #value
+// * serviceType.coding ^slicing.discriminator.path = "system"
+// * serviceType.coding ^slicing.rules = #open
+// * serviceType.coding contains
+//     il-core 1..* and
+//     leumit 1..*
 
-* serviceType.coding[il-core] from $vs-il-core-service-type (required)
-* serviceType.coding[il-core].system = $sct (exactly)
-* serviceType.coding[il-core].code 1..1
-* serviceType.coding[il-core].display 1..1
+// * serviceType.coding[il-core] from $vs-il-core-service-type (required)
+// * serviceType.coding[il-core].system = $sct (exactly)
+// * serviceType.coding[il-core].code 1..1
+// * serviceType.coding[il-core].display 1..1
 
-* serviceType.coding[leumit] from $visit-expertise-vs (required)
-* serviceType.coding[leumit].system = $expertise-code (exactly)
-* serviceType.coding[leumit].code 1..1
-* serviceType.coding[leumit].display 1..1
+// * serviceType.coding[leumit] from $visit-expertise-vs (required)
+// * serviceType.coding[leumit].system = $expertise-code (exactly)
+// * serviceType.coding[leumit].code 1..1
+// * serviceType.coding[leumit].display 1..1
 
 * subject.reference 1..1
 
