@@ -21,19 +21,21 @@
     }
   ],
   "status": "active",
-  "statusReason": {
-    "coding": [
-      {
-        "system": "http://fhir.leumit.co.il/cs/tamar-status",
-        "code": "active-treatment",
-        "display": "Active treatment"
-      }
-    ]
-  },
+  "statusReason": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.leumit.co.il/cs/tamar-status",
+          "code": "active-treatment",
+          "display": "Active treatment"
+        }
+      ]
+    }
+  ],
   "category": {
     "coding": [
       {
-        "system": "http://terminology.hl7.org/CodeSystem/medication-statement-category",
+        "system": "http://fhir.health.gov.il/cs/il-core-medication-statement-category",
         "code": "community-hmo",
         "display": "Community-hmo"
       }
@@ -55,8 +57,8 @@
       },
       {
         "system": "http://snomed.info/sct",
-        "code": "416922004",
-        "display": "Atorvastatin 20 mg oral tablet"
+        "code": "373444002",
+        "display": "Atorvastatin (substance)"
       }
     ],
     "text": "Lipitor 20mg Tablets"
@@ -86,12 +88,6 @@
             "system": "http://snomed.info/sct",
             "code": "26643006",
             "display": "Oral route"
-          },
-          {
-            "system": "http://fhir.leumit.co.il/cs/med-route",
-            "code": "PO",
-            "display": "Oral",
-            "userSelected": true
           }
         ]
       },
@@ -99,12 +95,7 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "421937009",
-            "display": "Swallow - dosage instruction"
-          },
-          {
-            "system": "http://fhir.leumit.co.il/cs/med-method",
-            "code": "swallow",
+            "code": "421521009",
             "display": "Swallow"
           }
         ]

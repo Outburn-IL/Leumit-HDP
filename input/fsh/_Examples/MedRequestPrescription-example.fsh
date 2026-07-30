@@ -51,7 +51,9 @@ Description: "Prescription for Atorvastatin 20mg for a Leumit patient."
 
 * requester.reference = "Practitioner/leumit-prac-44210"
 
-* courseOfTherapyType.coding = http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type#chronic "Chronic therapy"
+* courseOfTherapyType.coding[leumit].system = "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"
+* courseOfTherapyType.coding[leumit].code = #acute
+* courseOfTherapyType.coding[leumit].display = "Short course (acute) therapy"
 
 // Prescription group identifier
 * groupIdentifier.system = "http://fhir.leumit.co.il/identifier/tamar-med-prescription-group"
@@ -60,6 +62,9 @@ Description: "Prescription for Atorvastatin 20mg for a Leumit patient."
 * note.text = "יש ליטול בלילה עם אוכל"
 
 * dosageInstruction.text = "טבליה אחת פעם ביום בלילה"
+* dosageInstruction.additionalInstruction.coding[leumit].system = "http://fhir.leumit.co.il/cs/matan-code"
+* dosageInstruction.additionalInstruction.coding[leumit].code = #12
+* dosageInstruction.additionalInstruction.coding[leumit].display = "יש ליטול עם אוכל"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "2024-03-15"
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.period = 1

@@ -75,9 +75,9 @@
   "courseOfTherapyType": {
     "coding": [
       {
-        "code": "chronic",
-        "system": "http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type",
-        "display": "Chronic therapy"
+        "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+        "code": "acute",
+        "display": "Short course (acute) therapy"
       }
     ]
   },
@@ -92,6 +92,17 @@
   ],
   "dosageInstruction": [
     {
+      "additionalInstruction": [
+        {
+          "coding": [
+            {
+              "system": "http://fhir.leumit.co.il/cs/matan-code",
+              "code": "12",
+              "display": "יש ליטול עם אוכל"
+            }
+          ]
+        }
+      ],
       "timing": {
         "repeat": {
           "boundsPeriod": {

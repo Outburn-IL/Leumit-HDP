@@ -50,7 +50,25 @@ Description: "Leumit prescription MedicationRequest profile"
 
 * groupIdentifier.system = "http://fhir.leumit.co.il/identifier/tamar-med-prescription-group" (exactly)
 
+* courseOfTherapyType.coding ^slicing.discriminator.type = #value
+* courseOfTherapyType.coding ^slicing.discriminator.path = "system"
+* courseOfTherapyType.coding ^slicing.rules = #open
+* courseOfTherapyType.coding contains leumit 1..1
+* courseOfTherapyType.coding[leumit].system = $hl7-course-of-therapy (exactly)
+* courseOfTherapyType.coding[leumit].system 1..1
+* courseOfTherapyType.coding[leumit].code = #acute (exactly)
+* courseOfTherapyType.coding[leumit].display = "Short course (acute) therapy" (exactly)
+
 * note.text 1..1
+
+* dosageInstruction.additionalInstruction.coding ^slicing.discriminator.type = #value
+* dosageInstruction.additionalInstruction.coding ^slicing.discriminator.path = "system"
+* dosageInstruction.additionalInstruction.coding ^slicing.rules = #open
+* dosageInstruction.additionalInstruction.coding contains leumit 0..*
+* dosageInstruction.additionalInstruction.coding[leumit].system = $matan-code (exactly)
+* dosageInstruction.additionalInstruction.coding[leumit].system 1..1
+* dosageInstruction.additionalInstruction.coding[leumit].code 1..1
+* dosageInstruction.additionalInstruction.coding[leumit].display 1..1
 
 * dosageInstruction.route.coding ^slicing.discriminator.type = #value
 * dosageInstruction.route.coding ^slicing.discriminator.path = "system"
