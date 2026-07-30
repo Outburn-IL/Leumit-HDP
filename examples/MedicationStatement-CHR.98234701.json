@@ -89,14 +89,7 @@
       "route": {
         "coding": [
           {
-            "system": "http://fhir.leumit.co.il/cs/med-route",
-            "userSelected": true,
-            "code": "PO",
-            "display": "דרך הפה"
-          },
-          {
             "system": "http://snomed.info/sct",
-            "userSelected": false,
             "code": "26643006",
             "display": "Oral route"
           }

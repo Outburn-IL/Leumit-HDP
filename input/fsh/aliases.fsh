@@ -77,3 +77,5 @@ Alias: $vs-il-core-manifestation = http://fhir.health.gov.il/ValueSet/il-core-ma
 
 Alias: $il-core-identifier-type = http://fhir.health.gov.il/cs/il-core-identifier-type
 Alias: $ext-medication-cancalled-by = http://fhir.leumit.co.il/StructureDefinition/ext-med-cancelled-by
+Alias: $matan-code = http://fhir.leumit.co.il/cs/matan-code
+Alias: $hl7-course-of-therapy = http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy

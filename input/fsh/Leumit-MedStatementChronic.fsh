@@ -23,6 +23,7 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 * statusReason.extension[canecelled-by].valueReference.identifier.system 1..1
 * statusReason.extension[canecelled-by].valueReference.identifier.system = "http://fhir.leumit.co.il/identifier/automatic-practitioner" (exactly)
 * statusReason.extension[canecelled-by].valueReference.identifier.value 1..1
+* category.coding.system = "http://fhir.health.gov.il/cs/il-core-medication-statement-category" (exactly)
 * category.coding.code = #community-hmo
 * category.coding.display = "Community-hmo"
 * medicationCodeableConcept.coding 1..*
