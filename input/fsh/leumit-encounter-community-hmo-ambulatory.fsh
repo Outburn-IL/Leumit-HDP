@@ -33,23 +33,23 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * type[suppliers-sys].coding.system 1..1
 * type[suppliers-sys].coding.code 1..1
 
-* serviceType.coding 2..*
-* serviceType.coding ^slicing.discriminator.type = #value
-* serviceType.coding ^slicing.discriminator.path = "system"
-* serviceType.coding ^slicing.rules = #open
-* serviceType.coding contains
-    il-core 1..* and
-    leumit 1..*
+// * serviceType.coding 2..*
+// * serviceType.coding ^slicing.discriminator.type = #value
+// * serviceType.coding ^slicing.discriminator.path = "system"
+// * serviceType.coding ^slicing.rules = #open
+// * serviceType.coding contains
+//     il-core 1..* and
+//     leumit 1..*
 
-* serviceType.coding[il-core] from $vs-il-core-service-type (required)
-* serviceType.coding[il-core].system = $sct (exactly)
-* serviceType.coding[il-core].code 1..1
-* serviceType.coding[il-core].display 1..1
+// * serviceType.coding[il-core] from $vs-il-core-service-type (required)
+// * serviceType.coding[il-core].system = $sct (exactly)
+// * serviceType.coding[il-core].code 1..1
+// * serviceType.coding[il-core].display 1..1
 
-* serviceType.coding[leumit] from $visit-expertise-vs (required)
-* serviceType.coding[leumit].system = $expertise-code (exactly)
-* serviceType.coding[leumit].code 1..1
-* serviceType.coding[leumit].display 1..1
+// * serviceType.coding[leumit] from $visit-expertise-vs (required)
+// * serviceType.coding[leumit].system = $expertise-code (exactly)
+// * serviceType.coding[leumit].code 1..1
+// * serviceType.coding[leumit].display 1..1
 
 * subject.reference 1..1
 
@@ -59,14 +59,14 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 * period.start 1..1
 * period.end 1..1
 
-* reasonCode 1..* // Mandatory data item but reasonCode[moh-reason-code] isnt mandatory element so as long as we provide something we are OK
-* reasonCode contains leumit-reason-code 0..* // reasonCode is a mandatory data element but not mandatory in parent profile. There are some scenarios where there is no local code.
+// * reasonCode 1..* // Mandatory data item but reasonCode[moh-reason-code] isnt mandatory element so as long as we provide something we are OK
+// * reasonCode contains leumit-reason-code 0..* // reasonCode is a mandatory data element but not mandatory in parent profile. There are some scenarios where there is no local code.
 
-* reasonCode[leumit-reason-code].coding 1..*
-* reasonCode[leumit-reason-code].coding.system 1..1
-* reasonCode[leumit-reason-code] ^patternCodeableConcept.coding.system = $patient-visit-reason-leumit
-* reasonCode[leumit-reason-code].coding.code 1..1
-* reasonCode[leumit-reason-code].coding.display 1..1
+// * reasonCode[leumit-reason-code].coding 1..*
+// * reasonCode[leumit-reason-code].coding.system 1..1
+// * reasonCode[leumit-reason-code] ^patternCodeableConcept.coding.system = $patient-visit-reason-leumit
+// * reasonCode[leumit-reason-code].coding.code 1..1
+// * reasonCode[leumit-reason-code].coding.display 1..1
 
 * reasonReference.reference 1..1
 
