@@ -72,9 +72,8 @@ Title: "Leumit IL-HDP Encounter Community HMO Ambulatory Profile"
 
 * diagnosis.condition 1..1
 
-* location.location.reference 1..1
-
-* serviceProvider 1..1
+* serviceProvider 1..1 MS
+* serviceProvider ^short = "The organization that provided the encounter"
 * serviceProvider.reference 1..1
 
 * insert ConformanceMetadata

@@ -1,0 +1,150 @@
+{
+    "resourceType": "MedicationStatement",
+    "id": "CHR.1bbfb85d-54ba-524d-b6ba-f132bde07c17",
+    "meta": {
+        "security": [
+            {
+                "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+                "code": "medications",
+                "display": "תרופות"
+            }
+        ],
+        "profile": [
+            "http://fhir.leumit.co.il/StructureDefinition/med-statement-chronic"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://fhir.health.gov.il/StructureDefinition/ext-medication-course-of-therapy-type",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type",
+                        "code": "chronic",
+                        "display": "Chronic therapy"
+                    }
+                ]
+            }
+        }
+    ],
+    "identifier": [
+        {
+            "system": "http://fhir.leumit.co.il/identifier/tamar-chronic-med",
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+                        "code": "strong-id",
+                        "display": "Strong Identifier"
+                    }
+                ]
+            },
+            "value": "21927.1.459675922.20101230.9"
+        }
+    ],
+    "status": "stopped",
+    "statusReason": [
+        {
+            "coding": [
+                {
+                    "system": "http://fhir.leumit.co.il/cs/tamar-cancel-reason",
+                    "code": "17"
+                }
+            ],
+            "extension": [
+                {
+                    "url": "http://fhir.leumit.co.il/StructureDefinition/ext-med-cancelled-by-practitioner",
+                    "valueReference": {
+                        "identifier": {
+                            "system": "http://fhir.leumit.co.il/identifier/automatic-practitioner",
+                            "value": "99999"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "category": {
+        "coding": [
+            {
+                "system": "http://fhir.health.gov.il/cs/il-core-medication-statement-category",
+                "code": "community-hmo",
+                "display": "Community-hmo"
+            }
+        ]
+    },
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://fhir.leumit.co.il/cs/yarpa-catalog-local",
+                "code": "21927",
+                "display": "VENTOLIN DIS.200MCGX60 DO",
+                "userSelected": true
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient?identifier=http://fhir.health.gov.il/identifier/il-national-id|459675922"
+    },
+    "effectiveDateTime": "2008-01-21T00:00:00+02:00",
+    "dateAsserted": "2010-12-30T00:00:00+02:00",
+    "informationSource": {
+        "reference": "Practitioner?identifier=http://practitioners.health.gov.il/Practitioners|1-29105"
+    },
+    "dosage": [
+        {
+            "additionalInstruction": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://fhir.leumit.co.il/cs/matan-code",
+                            "code": "RS",
+                            "display": "לשאיפה"
+                        }
+                    ],
+                    "text": "לשאיפה"
+                }
+            ],
+            "timing": {
+                "repeat": {
+                    "boundsPeriod": {
+                        "start": "2008-01-21T00:00:00+02:00",
+                        "end": "2010-12-30T00:00:00+02:00"
+                    },
+                    "count": 10,
+                    "frequency": 1,
+                    "period": 1,
+                    "periodUnit": "d"
+                }
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "447694001",
+                        "display": "Respiratory tract route (qualifier value)"
+                    }
+                ]
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "740666001",
+                        "display": "Inhale (administration method)"
+                    }
+                ]
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": 1,
+                        "unit": "Unit (qualifier value)"
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+

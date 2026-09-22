@@ -1,0 +1,129 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "CHR.0f12d6c3-3146-5dde-9019-dcdb9f3b0414",
+  "meta": {
+    "security": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+        "code": "medications",
+        "display": "תרופות"
+      }
+    ],
+    "profile": [
+      "http://fhir.leumit.co.il/StructureDefinition/med-statement-chronic"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://fhir.health.gov.il/StructureDefinition/ext-medication-course-of-therapy-type",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type",
+            "code": "chronic",
+            "display": "Chronic therapy"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://fhir.leumit.co.il/identifier/tamar-chronic-med",
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+            "code": "strong-id",
+            "display": "Strong Identifier"
+          }
+        ]
+      },
+      "value": "1173.1.309008266.20070204.9"
+    }
+  ],
+  "status": "stopped",
+  "statusReason": [
+    {
+      "coding": [
+        {
+          "system": "http://fhir.leumit.co.il/cs/tamar-cancel-reason",
+          "code": "7",
+          "display": "שינוי במעמד התרופה"
+        }
+      ]
+    }
+  ],
+  "category": {
+    "coding": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-core-medication-statement-category",
+        "code": "community-hmo",
+        "display": "Community-hmo"
+      }
+    ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.leumit.co.il/cs/yarpa-catalog-local",
+        "code": "1173",
+        "display": "LAXADIN 5 MG 50 DRAG",
+        "userSelected": true
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient?identifier=http://fhir.health.gov.il/identifier/il-national-id|309008266"
+  },
+  "effectiveDateTime": "2007-02-04T00:00:00+02:00",
+  "dateAsserted": "2007-02-04T00:00:00+02:00",
+  "informationSource": {
+    "reference": "Practitioner?identifier=http://practitioners.health.gov.il/Practitioners|1-25668"
+  },
+  "dosage": [
+    {
+      "additionalInstruction": [
+        {
+          "coding": [
+            {
+              "system": "http://fhir.leumit.co.il/cs/matan-code",
+              "code": "PO",
+              "display": "דרך הפה"
+            }
+          ],
+          "text": "דרך הפה"
+        }
+      ],
+      "timing": {
+        "repeat": {
+          "boundsPeriod": {
+            "start": "2007-02-04T00:00:00+02:00",
+            "end": "2007-02-04T00:00:00+02:00"
+          },
+          "count": 30,
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "route": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "26643006",
+            "display": "Oral route (qualifier value)"
+          }
+        ]
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 2,
+            "unit": "Tablet (unit of presentation)"
+          }
+        }
+      ]
+    }
+  ]
+}
