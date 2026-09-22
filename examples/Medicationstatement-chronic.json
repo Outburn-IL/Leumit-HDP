@@ -16,22 +16,11 @@
   },
   "identifier": [
     {
-      "system": "http://fhir.leumit.co.il/identifier/tamar-chronic",
+      "system": "http://fhir.leumit.co.il/identifier/tamar-chronic-med",
       "value": "99887766"
     }
   ],
   "status": "active",
-  "statusReason": [
-    {
-      "coding": [
-        {
-          "system": "http://fhir.leumit.co.il/cs/tamar-status",
-          "code": "active-treatment",
-          "display": "Active treatment"
-        }
-      ]
-    }
-  ],
   "category": {
     "coding": [
       {

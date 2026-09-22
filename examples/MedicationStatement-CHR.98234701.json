@@ -30,19 +30,8 @@
   ],
   "identifier": [
     {
-      "system": "http://fhir.leumit.co.il/identifier/tamar-chronic",
+      "system": "http://fhir.leumit.co.il/identifier/tamar-chronic-med",
       "value": "98234701"
-    }
-  ],
-  "statusReason": [
-    {
-      "coding": [
-        {
-          "system": "http://fhir.leumit.co.il/cs/tamar-status",
-          "code": "0",
-          "display": "פעיל"
-        }
-      ]
     }
   ],
   "category": {
@@ -66,7 +55,7 @@
     "text": "אטורבסטטין 20 מ\"ג"
   },
   "subject": {
-    "reference": "Patient/BP.0091058414"
+    "reference": "Patient/leumit-pat-928374"
   },
   "context": {
     "reference": "Encounter/leumit-enc-556201"
@@ -91,7 +80,8 @@
           {
             "system": "http://snomed.info/sct",
             "code": "26643006",
-            "display": "Oral route"
+            "display": "Oral route",
+            "userSelected": false
           }
         ]
       },

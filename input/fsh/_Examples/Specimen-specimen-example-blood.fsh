@@ -40,7 +40,7 @@ Description: "Example of a blood specimen for lab test order"
 
 * collection.bodySite.coding[+].system = $sct
 * collection.bodySite.coding[=].code = #368209003
-* collection.bodySite.coding[=].display = "Left arm"
+* collection.bodySite.coding[=].display = "Right arm"
 
 * container.type.coding[leumit].system = $leumit-container-type
 * container.type.coding[leumit].code = #TUBE-VAC

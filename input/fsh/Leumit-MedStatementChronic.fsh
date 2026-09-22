@@ -14,15 +14,26 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 * id 1..1
 * extension[courseOfTherapyType].valueCodeableConcept = http://fhir.health.gov.il/cs/il-core-medication-course-of-therapy-type#chronic "Chronic therapy"
 * identifier.system 1..1
-* identifier.system = "http://fhir.leumit.co.il/identifier/tamar-chronic" (exactly)
-* statusReason.extension contains 
+* identifier.system = "http://fhir.leumit.co.il/identifier/tamar-chronic-med" (exactly)
+* extension contains $ext-cancelled-by named cancelled-by 0..1
+* extension[cancelled-by].url = $ext-cancelled-by (exactly)
+* extension[cancelled-by].valueReference 1..1
+* extension[cancelled-by].valueReference.type 1..1
+* extension[cancelled-by].valueReference.display 1..1
+* extension[cancelled-by].valueReference.identifier 0..1
+* extension[cancelled-by].valueReference.identifier.system 1..1
+* extension[cancelled-by].valueReference.identifier.system = "http://practitioners.health.gov.il/Practitioners" (exactly)
+* extension[cancelled-by].valueReference.identifier.value 1..1
+* statusReason.coding.system = "http://fhir.leumit.co.il/cs/tamar-cancel-reason" (exactly)
+* statusReason.extension contains
     $ext-medication-cancalled-by named canecelled-by 0..1
 * statusReason.extension[canecelled-by].url = $ext-medication-cancalled-by (exactly)
 * statusReason.extension[canecelled-by].valueReference.reference 0..1
 * statusReason.extension[canecelled-by].valueReference.identifier 0..1
-* statusReason.extension[canecelled-by].valueReference.identifier.system 1..1
+* statusReason.extension[canecelled-by].valueReference.identifier.system 0..1
 * statusReason.extension[canecelled-by].valueReference.identifier.system = "http://fhir.leumit.co.il/identifier/automatic-practitioner" (exactly)
-* statusReason.extension[canecelled-by].valueReference.identifier.value 1..1
+* statusReason.extension[canecelled-by].valueReference.identifier.value 0..1
+* statusReason.extension[canecelled-by].valueReference.identifier.value = "99999" (exactly)
 * category.coding.system = "http://fhir.health.gov.il/cs/il-core-medication-statement-category" (exactly)
 * category.coding.code = #community-hmo
 * category.coding.display = "Community-hmo"
@@ -53,6 +64,14 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 
 * medicationCodeableConcept.text 0..1
 
+* dosage.extension contains $dosage-matan named matan-code 0..1
+* dosage.extension[matan-code].url = $dosage-matan (exactly)
+* dosage.extension[matan-code].valueCodeableConcept 1..1
+* dosage.extension[matan-code].valueCodeableConcept.coding 1..1
+* dosage.extension[matan-code].valueCodeableConcept.coding.system 1..1
+* dosage.extension[matan-code].valueCodeableConcept.coding.system = $matan-code (exactly)
+* dosage.extension[matan-code].valueCodeableConcept.coding.code 1..1
+* dosage.extension[matan-code].valueCodeableConcept.coding.display 0..1
 * dosage.route.coding.system = $sct (exactly)
 * dosage.method.coding.system = $sct (exactly)
 * dosage.additionalInstruction.coding.system = "http://fhir.leumit.co.il/cs/matan-code" (exactly)

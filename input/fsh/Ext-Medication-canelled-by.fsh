@@ -5,6 +5,6 @@ Description: "Extension: Medication cancelled by practitioner"
 Context: MedicationStatement.statusReason
 * ^url = $ext-medication-cancalled-by
 * url 1..1
-* url = "http://fhir.leumit.co.il/StructureDefinition/ext-med-cancelled-by" (exactly)  
+* url = "http://fhir.leumit.co.il/StructureDefinition/ext-med-cancelled-by-practitioner" (exactly)
 * value[x] only Reference(LeumitPractitioner)
 * insert ConformanceMetadata
