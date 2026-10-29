@@ -5,8 +5,8 @@ Title: "Leumit MedicationRequest Prescription"
 Description: "Leumit prescription MedicationRequest profile"
 * ^status = #draft
 
-// Require both the HDP and Leumit profile URLs in meta.profile
-* meta.profile 2..*
+// Require the Leumit profile URL in meta.profile
+* meta.profile 1..*
 * meta.profile ^slicing.discriminator.type = #value
 * meta.profile ^slicing.discriminator.path = "$this"
 * meta.profile ^slicing.rules = #open
@@ -36,66 +36,34 @@ Description: "Leumit prescription MedicationRequest profile"
 * medicationCodeableConcept.coding[yarpa].system 1..1
 * medicationCodeableConcept.coding[yarpa].code 1..1
 * medicationCodeableConcept.coding[yarpa].display 1..1
-* medicationCodeableConcept.coding[yarpa].userSelected = true
 * medicationCodeableConcept.coding[yarpa-local].system = "http://fhir.leumit.co.il/cs/yarpa-catalog-local" (exactly)
 * medicationCodeableConcept.coding[yarpa-local].system 1..1
 * medicationCodeableConcept.coding[yarpa-local].code 1..1
 * medicationCodeableConcept.coding[yarpa-local].display 1..1
-* medicationCodeableConcept.coding[yarpa-local].userSelected = true
 * medicationCodeableConcept.coding[snomed].system = $sct (exactly)
 * medicationCodeableConcept.coding[snomed].system 1..1
 * medicationCodeableConcept.coding[snomed].code 1..1
 * medicationCodeableConcept.coding[snomed].display 1..1
-* medicationCodeableConcept.coding[snomed].userSelected = false
 
 * groupIdentifier.system = "http://fhir.leumit.co.il/identifier/tamar-med-prescription-group" (exactly)
 
-* courseOfTherapyType.coding ^slicing.discriminator.type = #value
-* courseOfTherapyType.coding ^slicing.discriminator.path = "system"
-* courseOfTherapyType.coding ^slicing.rules = #open
-* courseOfTherapyType.coding contains leumit 1..1
-* courseOfTherapyType.coding[leumit].system = $hl7-course-of-therapy (exactly)
-* courseOfTherapyType.coding[leumit].system 1..1
-* courseOfTherapyType.coding[leumit].code = #acute (exactly)
-* courseOfTherapyType.coding[leumit].display = "Short course (acute) therapy" (exactly)
+* courseOfTherapyType.coding.system = $hl7-course-of-therapy (exactly)
+* courseOfTherapyType.coding.code = #acute (exactly)
+* courseOfTherapyType.coding.display = "Short course (acute) therapy" (exactly)
 
 * note.text 1..1
 
-* dosageInstruction.additionalInstruction.coding ^slicing.discriminator.type = #value
-* dosageInstruction.additionalInstruction.coding ^slicing.discriminator.path = "system"
-* dosageInstruction.additionalInstruction.coding ^slicing.rules = #open
-* dosageInstruction.additionalInstruction.coding contains leumit 0..*
-* dosageInstruction.additionalInstruction.coding[leumit].system = $matan-code (exactly)
-* dosageInstruction.additionalInstruction.coding[leumit].system 1..1
-* dosageInstruction.additionalInstruction.coding[leumit].code 1..1
-* dosageInstruction.additionalInstruction.coding[leumit].display 1..1
+* dosageInstruction.extension contains $dosage-matan named matan-code 0..1
+* dosageInstruction.extension[matan-code].url = $dosage-matan (exactly)
+* dosageInstruction.extension[matan-code].valueCodeableConcept 1..1
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding 1..1
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.system 1..1
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.system = $matan-code (exactly)
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.code 1..1
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.display 0..1
 
-* dosageInstruction.route.coding ^slicing.discriminator.type = #value
-* dosageInstruction.route.coding ^slicing.discriminator.path = "system"
-* dosageInstruction.route.coding ^slicing.rules = #open
-* dosageInstruction.route.coding contains
-    local 0..* and
-    snomed 0..*
-* dosageInstruction.route.coding[local].system = "http://fhir.leumit.co.il/cs/med-route" (exactly)
-* dosageInstruction.route.coding[local].system 1..1
-* dosageInstruction.route.coding[local].code 1..1
-* dosageInstruction.route.coding[local].display 1..1
-* dosageInstruction.route.coding[snomed].system = $sct (exactly)
-* dosageInstruction.route.coding[snomed].system 1..1
-* dosageInstruction.route.coding[snomed].code 1..1
-* dosageInstruction.route.coding[snomed].display 1..1
-
-* dosageInstruction.method.coding ^slicing.discriminator.type = #value
-* dosageInstruction.method.coding ^slicing.discriminator.path = "system"
-* dosageInstruction.method.coding ^slicing.rules = #open
-* dosageInstruction.method.coding contains leumit 0..*
-* dosageInstruction.method.coding[leumit].system = "http://fhir.leumit.co.il/cs/med-method" (exactly)
-* dosageInstruction.method.coding[leumit].system 1..1
-* dosageInstruction.method.coding[leumit].code 1..1
-* dosageInstruction.method.coding[leumit].display 1..1
-
-* dosageInstruction.doseAndRate.doseQuantity.system = $ucum (exactly)
-* dosageInstruction.doseAndRate.doseQuantity.extension contains $DAR named dataAbsent 0..1
-* dosageInstruction.doseAndRate.doseQuantity.extension[dataAbsent].valueCode = #unknown
+* dosageInstruction.route.coding.system = $sct (exactly)
+* dosageInstruction.site.coding.system = $sct (exactly)
+* dosageInstruction.method.coding.system = $sct (exactly)
 
 * insert ConformanceMetadata

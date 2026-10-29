@@ -14,6 +14,20 @@
       }
     ]
   },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+            "code": "strong-id"
+          }
+        ]
+      },
+      "system": "http://fhir.leumit.co.il/identifier/allergy-intolerance",
+      "value": "allergy-example-001"
+    }
+  ],
   "category": [
     "environment"
   ],
@@ -87,6 +101,9 @@
   "type": "allergy",
   "patient": {
     "reference": "Patient/example"
+  },
+  "recorder": {
+    "reference": "Practitioner/leumit-practitioner-example"
   },
   "recordedDate": "2025-01-15"
 }

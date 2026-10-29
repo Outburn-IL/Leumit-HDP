@@ -79,8 +79,6 @@ Description: "A sample chronic medication statement for Ventolin that was automa
 
 * statusReason.coding.system = "http://fhir.leumit.co.il/cs/tamar-cancel-reason"
 * statusReason.coding.code = #17
-* statusReason.extension[canecelled-by].valueReference.identifier.system = "http://fhir.leumit.co.il/identifier/automatic-practitioner"
-* statusReason.extension[canecelled-by].valueReference.identifier.value = "99999"
 
 * category.coding = http://fhir.health.gov.il/cs/il-core-medication-statement-category#community-hmo "Community-hmo"
 

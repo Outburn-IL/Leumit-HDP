@@ -92,6 +92,20 @@
   ],
   "dosageInstruction": [
     {
+      "extension": [
+        {
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://fhir.leumit.co.il/cs/matan-code",
+                "code": "12",
+                "display": "יש ליטול עם אוכל"
+              }
+            ]
+          },
+          "url": "http://fhir.leumit.co.il/StructureDefinition/dosage-matan"
+        }
+      ],
       "additionalInstruction": [
         {
           "coding": [
@@ -116,36 +130,19 @@
       "route": {
         "coding": [
           {
-            "system": "http://fhir.leumit.co.il/cs/med-route",
-            "code": "PO",
-            "display": "דרך הפה"
-          },
-          {
             "system": "http://snomed.info/sct",
             "code": "26643006",
             "display": "Oral route"
           }
         ]
       },
-      "method": {
-        "coding": [
-          {
-            "system": "http://fhir.leumit.co.il/cs/med-method",
-            "code": "SWL",
-            "display": "בליעה"
-          }
-        ]
-      },
       "doseAndRate": [
         {
           "doseQuantity": {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                "valueCode": "unknown"
-              }
-            ],
+            "value": 20,
+            "unit": "mg",
             "system": "http://unitsofmeasure.org"
+            ,"code": "mg"
           }
         }
       ],

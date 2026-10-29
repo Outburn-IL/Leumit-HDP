@@ -9,7 +9,7 @@ name: Leumit-HDP
 title: Leumit Health Service Profiles
 description: FHIR Profiles and Implementation Guide for Leumit Health Service
 status: draft # draft | active | retired | unknown
-version: 0.8.7
+version: 0.9.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -23,10 +23,10 @@ publisher:
 dependencies:
   il.core.fhir.r4: 
     uri: http://fhir.health.gov.il/ImplementationGuide/il.core.fhir.r4
-    version: 0.21.0
+    version: 0.22.0
   il.hdp.fhir.r4: 
     uri: http://fhir.health.gov.il/ImplementationGuide/il.core.hdp.r4
-    version: 0.5.0
+    version: 0.6.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can

@@ -51,9 +51,9 @@ Description: "Prescription for Atorvastatin 20mg for a Leumit patient."
 
 * requester.reference = "Practitioner/leumit-prac-44210"
 
-* courseOfTherapyType.coding[leumit].system = "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"
-* courseOfTherapyType.coding[leumit].code = #acute
-* courseOfTherapyType.coding[leumit].display = "Short course (acute) therapy"
+* courseOfTherapyType.coding.system = "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"
+* courseOfTherapyType.coding.code = #acute
+* courseOfTherapyType.coding.display = "Short course (acute) therapy"
 
 // Prescription group identifier
 * groupIdentifier.system = "http://fhir.leumit.co.il/identifier/tamar-med-prescription-group"
@@ -62,27 +62,19 @@ Description: "Prescription for Atorvastatin 20mg for a Leumit patient."
 * note.text = "יש ליטול בלילה עם אוכל"
 
 * dosageInstruction.text = "טבליה אחת פעם ביום בלילה"
-* dosageInstruction.additionalInstruction.coding[leumit].system = "http://fhir.leumit.co.il/cs/matan-code"
-* dosageInstruction.additionalInstruction.coding[leumit].code = #12
-* dosageInstruction.additionalInstruction.coding[leumit].display = "יש ליטול עם אוכל"
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.system = "http://fhir.leumit.co.il/cs/matan-code"
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.code = #12
+* dosageInstruction.extension[matan-code].valueCodeableConcept.coding.display = "יש ליטול עם אוכל"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "2024-03-15"
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.period = 1
 * dosageInstruction.timing.repeat.periodUnit = #d
 
-// Leumit route coding slices: local + snomed
-* dosageInstruction.route.coding[local].system = "http://fhir.leumit.co.il/cs/med-route"
-* dosageInstruction.route.coding[local].code = #PO
-* dosageInstruction.route.coding[local].display = "דרך הפה"
-* dosageInstruction.route.coding[snomed].system = "http://snomed.info/sct"
-* dosageInstruction.route.coding[snomed].code = #26643006
-* dosageInstruction.route.coding[snomed].display = "Oral route"
+* dosageInstruction.route.coding.system = "http://snomed.info/sct"
+* dosageInstruction.route.coding.code = #26643006
+* dosageInstruction.route.coding.display = "Oral route"
 
-// Leumit method coding slice
-* dosageInstruction.method.coding[leumit].system = "http://fhir.leumit.co.il/cs/med-method"
-* dosageInstruction.method.coding[leumit].code = #SWL
-* dosageInstruction.method.coding[leumit].display = "בליעה"
-
-// Leumit doseQuantity: UCUM system fixed value + data-absent-reason extension (dose unknown)
+* dosageInstruction.doseAndRate.doseQuantity.value = 20
+* dosageInstruction.doseAndRate.doseQuantity.unit = "mg"
 * dosageInstruction.doseAndRate.doseQuantity.system = "http://unitsofmeasure.org"
-* dosageInstruction.doseAndRate.doseQuantity.extension[dataAbsent].valueCode = #unknown
+* dosageInstruction.doseAndRate.doseQuantity.code = #mg

@@ -25,15 +25,6 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 * extension[cancelled-by].valueReference.identifier.system = "http://practitioners.health.gov.il/Practitioners" (exactly)
 * extension[cancelled-by].valueReference.identifier.value 1..1
 * statusReason.coding.system = "http://fhir.leumit.co.il/cs/tamar-cancel-reason" (exactly)
-* statusReason.extension contains
-    $ext-medication-cancalled-by named canecelled-by 0..1
-* statusReason.extension[canecelled-by].url = $ext-medication-cancalled-by (exactly)
-* statusReason.extension[canecelled-by].valueReference.reference 0..1
-* statusReason.extension[canecelled-by].valueReference.identifier 0..1
-* statusReason.extension[canecelled-by].valueReference.identifier.system 0..1
-* statusReason.extension[canecelled-by].valueReference.identifier.system = "http://fhir.leumit.co.il/identifier/automatic-practitioner" (exactly)
-* statusReason.extension[canecelled-by].valueReference.identifier.value 0..1
-* statusReason.extension[canecelled-by].valueReference.identifier.value = "99999" (exactly)
 * category.coding.system = "http://fhir.health.gov.il/cs/il-core-medication-statement-category" (exactly)
 * category.coding.code = #community-hmo
 * category.coding.display = "Community-hmo"
@@ -49,13 +40,11 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 * medicationCodeableConcept.coding[yarpa].system = "http://yarpa.co.il/catalog" (exactly)
 * medicationCodeableConcept.coding[yarpa].code 1..1
 * medicationCodeableConcept.coding[yarpa].display 1..1
-* medicationCodeableConcept.coding[yarpa].userSelected = true
 
 * medicationCodeableConcept.coding[local-yarpa].system 1..1
 * medicationCodeableConcept.coding[local-yarpa].system = "http://fhir.leumit.co.il/cs/yarpa-catalog-local" (exactly)
 * medicationCodeableConcept.coding[local-yarpa].code 1..1
 * medicationCodeableConcept.coding[local-yarpa].display 1..1
-* medicationCodeableConcept.coding[local-yarpa].userSelected = true
 
 * medicationCodeableConcept.coding[snomed].system 1..1
 * medicationCodeableConcept.coding[snomed].system = $sct (exactly)
@@ -74,5 +63,6 @@ Description: "Leumit local profile for chronic medication statements, derived fr
 * dosage.extension[matan-code].valueCodeableConcept.coding.display 0..1
 * dosage.route.coding.system = $sct (exactly)
 * dosage.method.coding.system = $sct (exactly)
-* dosage.additionalInstruction.coding.system = "http://fhir.leumit.co.il/cs/matan-code" (exactly)
+* dosage.site.coding.system = $sct (exactly)
 * subject.reference 1..1
+

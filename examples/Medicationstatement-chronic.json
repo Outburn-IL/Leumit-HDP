@@ -88,7 +88,17 @@
             "display": "Swallow"
           }
         ]
-      }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 20,
+            "unit": "mg",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg"
+          }
+        }
+      ]
     }
   ]
 }

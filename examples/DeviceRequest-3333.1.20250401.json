@@ -1,0 +1,65 @@
+{
+  "resourceType": "DeviceRequest",
+  "id": "3333.1.20250401",
+  "meta": {
+    "profile": [
+      "http://hdp.fhir.health.gov.il/StructureDefinition/il-hdp-device-request",
+      "http://fhir.leumit.co.il/StructureDefinition/device-request-prescription"
+    ],
+    "security": [
+      {
+        "system": "http://fhir.health.gov.il/cs/il-hdp-information-buckets",
+        "code": "medications",
+        "display": "תרופות"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.leumit.co.il/identifier/tamar-med-prescription",
+      "value": "3333.1.20250401",
+      "type": {
+        "coding": [
+          {
+            "system": "http://fhir.health.gov.il/cs/il-core-identifier-type",
+            "code": "strong-id",
+            "display": "Strong Identifier"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "codeCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://fhir.leumit.co.il/cs/local-catalog",
+        "code": "154",
+        "display": "AHISTON 2 MG 20 TAB",
+        "userSelected": true
+      }
+    ],
+    "text": "AHISTON 2 MG 20 TAB"
+  },
+  "subject": {
+    "reference": "Patient/BP.0091058414"
+  },
+  "authoredOn": "2025-04-01T20:21:10Z",
+  "occurrencePeriod": {
+    "start": "2026-01-25",
+    "end": "2026-04-25"
+  },
+  "requester": {
+    "reference": "Practitioner/leumit-practitioner-example"
+  },
+  "groupIdentifier": {
+    "system": "http://fhir.leumit.co.il/identifier/tamar-device-prescription-group",
+    "value": "3333.1"
+  },
+  "note": [
+    {
+      "text": "comment-comment"
+    }
+  ]
+}
